@@ -1,28 +1,27 @@
 package com.yibing.serializer;
 
-import org.apache.kafka.common.serialization.Serializer;
+import org.apache.kafka.common.serialization.Deserializer;
 
 import java.util.Map;
 
 /**
- * @author Administrator
- * 自定义序列化
+ * @author admin
  */
-public class UserDefineSerializer implements Serializer<Object> {
+public class UserDefineDeSerializer implements Deserializer<Object> {
     @Override
     public void configure(Map<String, ?> map, boolean b) {
         System.out.println("configure");
     }
 
     /**
-     * 把数据序列化为字节
+     * 反序列化
      * @param s
-     * @param o
+     * @param bytes
      * @return
      */
     @Override
-    public byte[] serialize(String s, Object o) {
-        return new byte[0];
+    public Object deserialize(String s, byte[] bytes) {
+        return null;
     }
 
     @Override
