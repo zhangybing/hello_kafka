@@ -1,5 +1,6 @@
 package com.yibing.serializer;
 
+import org.apache.commons.lang3.SerializationUtils;
 import org.apache.kafka.common.serialization.Deserializer;
 
 import java.util.Map;
@@ -21,7 +22,7 @@ public class UserDefineDeSerializer implements Deserializer<Object> {
      */
     @Override
     public Object deserialize(String s, byte[] bytes) {
-        return null;
+        return SerializationUtils.deserialize(bytes);
     }
 
     @Override

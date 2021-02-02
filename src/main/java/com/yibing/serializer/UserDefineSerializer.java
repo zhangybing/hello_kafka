@@ -1,7 +1,9 @@
 package com.yibing.serializer;
 
+import org.apache.commons.lang3.SerializationUtils;
 import org.apache.kafka.common.serialization.Serializer;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -22,7 +24,7 @@ public class UserDefineSerializer implements Serializer<Object> {
      */
     @Override
     public byte[] serialize(String s, Object o) {
-        return new byte[0];
+        return SerializationUtils.serialize((Serializable) o);
     }
 
     @Override
